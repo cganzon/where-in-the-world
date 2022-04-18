@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: hsl(0, 0%, 98%);
+    --element-bg: hsl(0, 0%, 100%);
+    --text-color: hsl(200, 15%, 8%);
+}
+
+.dark-theme {
+    --body-bg: hsl(207, 26%, 17%);
+    --element-bg: hsl(209, 23%, 22%);
+    --text-color: hsl(0, 0%, 100%);
+}
+
+body {
+    color: var(--text-color);
+    background-color: var(--body-bg);
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.header {
+    background-color: var(--element-bg);
+    padding: 30px 16px;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1380px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.theme-toggle-btn {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+@media(min-width: 768px) {
+    .header {
+        padding: 24px 50px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .theme-toggle-btn {
+        font-size: 16px;
+    }
+
+    .moon-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
