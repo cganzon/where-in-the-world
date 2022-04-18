@@ -35,7 +35,7 @@ body {
 /* Table of Contents */
 /* 1. Header Styles */
 /* 2. Main content styles */
-/* 3. Search and filter styles */
+/* 3. Search input and region select styles */
 
 /* ///////////// */
 /* Header Styles */
@@ -112,9 +112,9 @@ body {
     }
 }
 
-/* ///////////////////////// */
-/* Search and filter styles  */
-/* ///////////////////////// */
+/* ////////////////////////////////////// */
+/* Search input and region select styles  */
+/* ////////////////////////////////////// */
 .search-form {
     position: relative;
 }
@@ -144,11 +144,28 @@ body {
 }
 
 .region {
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
     background-color: var(--element-bg);
     color: var(--text-color);
+    font-size: 12px;
+    margin-top: 40px;
+    padding: 16px 50px 16px 24px;
+    border-right: 19px solid var(--element-bg);
 }
 
 @media(min-width: 768px) {
+    .search-filter {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .search-form {
+        flex-grow: 1;
+    }
+
     .search-icon {
         width: 18px;
         height: 18px;
@@ -157,5 +174,11 @@ body {
     .search-input {
         font-size: 14px;
         padding: 20px 30px 20px 74px;
+    }
+
+    .region {
+        margin-top: 0;
+        font-size: 14px;
+        padding: 19px 36px 19px 24px;
     }
 }
