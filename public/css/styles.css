@@ -26,6 +26,12 @@ body {
     font-family: 'Nunito Sans', sans-serif;
 }
 
+/* Table of Contents */
+/* 1. Header Styles */
+
+/* ///////////// */
+/* Header Styles */
+/* ///////////// */
 .header {
     background-color: var(--element-bg);
     padding: 30px 16px;
