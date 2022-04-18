@@ -1,3 +1,4 @@
+let darkMode = localStorage.getItem('darkMode');
 const themeToggleBtn = document.querySelector('.theme-toggle-btn');
 
 themeToggleBtn.addEventListener('click', () => {
