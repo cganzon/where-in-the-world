@@ -42,7 +42,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1380px;
+    max-width: 1280px;
     margin: 0 auto;
 }
 
@@ -81,5 +81,20 @@ body {
     .moon-icon {
         width: 20px;
         height: 20px;
+    }
+}
+
+/* /////////////////// */
+/* Main Content styles */
+/* /////////////////// */
+.main-content {
+    padding: 0 16px;
+    margin: 0 auto;
+    max-width: 1380px;
+}
+
+@media(min-width: 768px) {
+    .main-content {
+        padding: 0 50px;
     }
 }
