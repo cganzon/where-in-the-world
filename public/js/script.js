@@ -1,10 +1,25 @@
 let darkMode = localStorage.getItem('darkMode');
 const themeToggleBtn = document.querySelector('.theme-toggle-btn');
 
+const enableDarkMode = () => {
+    document.body.classList.add('dark-theme');
+    localStorage.setItem('darkMode', 'enabled');
+};
+
+const disableDarkMode = () => {
+    document.body.classList.remove('dark-theme');
+    localStorage.setItem('darkMode', null);
+};
+
+if(darkMode === 'enabled') {
+    enableDarkMode();
+};
+
 themeToggleBtn.addEventListener('click', () => {
-    if(document.body.classList.contains('dark-theme')) {
-        document.body.classList.remove('dark-theme');
+    darkMode = localStorage.getItem('darkMode');
+    if(darkMode !== 'enabled') {
+        enableDarkMode();
     } else {
-        document.body.classList.add('dark-theme');
-    }
+        disableDarkMode();
+    };
 });
