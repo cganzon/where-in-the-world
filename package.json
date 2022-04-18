@@ -1,0 +1,25 @@
+{
+  "name": "where-in-the-world",
+  "version": "1.0.0",
+  "description": "![Design preview for the REST Countries API with color theme switcher coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cganzon/where-in-the-world.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cganzon/where-in-the-world/issues"
+  },
+  "homepage": "https://github.com/cganzon/where-in-the-world#readme",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "ejs": "^3.0.2",
+    "express": "^4.17.3"
+  }
+}
