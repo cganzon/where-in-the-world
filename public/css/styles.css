@@ -12,12 +12,18 @@
     --body-bg: hsl(0, 0%, 98%);
     --element-bg: hsl(0, 0%, 100%);
     --text-color: hsl(200, 15%, 8%);
+    --input-placeholder-color: hsl(0, 0%, 75%);
+    --moon-icon-color: hsl(200, 15%, 8%);
+    --search-icon-color: hsl(0, 0%, 70%);
 }
 
 .dark-theme {
     --body-bg: hsl(207, 26%, 17%);
     --element-bg: hsl(209, 23%, 22%);
     --text-color: hsl(0, 0%, 100%);
+    --input-placeholder-color: hsl(0, 0%, 100%);
+    --moon-icon-color: hsl(0, 0%, 100%);
+    --search-icon-color: hsl(0, 0%, 100%);
 }
 
 body {
@@ -28,6 +34,8 @@ body {
 
 /* Table of Contents */
 /* 1. Header Styles */
+/* 2. Main content styles */
+/* 3. Search and filter styles */
 
 /* ///////////// */
 /* Header Styles */
@@ -64,6 +72,10 @@ body {
     gap: 8px;
 }
 
+.moon-icon {
+    fill: var(--moon-icon-color);
+}
+
 @media(min-width: 768px) {
     .header {
         padding: 24px 50px;
@@ -98,3 +110,25 @@ body {
         padding: 0 50px;
     }
 }
+
+/* ///////////////////////// */
+/* Search and filter styles  */
+/* ///////////////////////// */
+.search-icon {
+    fill: var(--search-icon-color);
+}
+
+.search-input {
+    background-color: var(--element-bg);
+    color: var(--text-color);
+}
+
+.search-input::placeholder {
+    color: var(--input-placeholder-color);
+}
+
+.region {
+    background-color: var(--element-bg);
+    color: var(--text-color);
+}
+
