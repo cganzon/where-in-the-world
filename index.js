@@ -1,3 +1,4 @@
+const { default: axios } = require('axios');
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -11,7 +12,12 @@ app.set(express.static(path.join(__dirname, 'views')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
-    res.render('home');
+    axios.get('https://restcountries.com/v2/all')
+        .then(response => {
+            const countries = response.data;
+            res.render('home', { countries });
+        })
+        .catch(err => console.log(err));
 });
 
 app.listen(port, () => console.log(`Server listening on http://localhost:${port}`));

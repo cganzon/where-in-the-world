@@ -37,6 +37,17 @@
                 </select>
             </form>
         </div>
+        <div class="cards-container">
+            <% for(let country of countries) { %>
+                <div class="country-card">
+                    <img class="card-flag" src=<%= country.flag %> alt="The flag of <%= country.name %>">
+                    <h2 class="card-name"><%= country.name %></h2>
+                    <p class="card-detail"><span class="card-detail-name">Population:</span> <%= country.population.toLocaleString() %></p>
+                    <p class="card-detail"><span class="card-detail-name">Region:</span> <%= country.region %></p>
+                    <p class="card-detail"><span class="card-detail-name">Capital:</span> <%= country.capital %></p>
+                </div>
+            <% } %>
+        </div>
     </main>
 
     <script src="/js/script.js"></script>
