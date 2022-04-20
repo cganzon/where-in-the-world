@@ -36,6 +36,7 @@ body {
 /* 1. Header Styles */
 /* 2. Main content styles */
 /* 3. Search input and region select styles */
+/* 4. Cards container and card styles */
 
 /* ///////////// */
 /* Header Styles */
@@ -185,7 +186,7 @@ body {
 }
 
 /* ////////////////////////////// */
-/* Card container and card styles */
+/* Cards container and card styles */
 /* ////////////////////////////// */
 .cards-container {
     margin: 32px auto;
