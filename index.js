@@ -15,33 +15,37 @@ app.use(express.json());
 // Static assets middleware
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req, res) => {
+app.get('/', (req, res, next) => {
     axios.get('https://restcountries.com/v3.1/all')
         .then(response => {
             const countries = response.data;
             res.render('home', { countries });
         })
-        .catch(err => console.log(err));
+        .catch(() => next());
 });
 
-app.get('/region', (req, res) => {
+app.get('/region', (req, res, next) => {
     const { filter } = req.query;
     axios.get(`https://restcountries.com/v3.1/region/${filter}`)
         .then(response => {
             const countries = response.data;
             res.render('home', { countries});
         })
-        .catch(err => console.log(err));
+        .catch(() => next());
 });
 
-app.get('/search', (req, res) => {
+app.get('/search', (req, res, next) => {
     const { query } = req.query;
     axios.get(`https://restcountries.com/v3.1/name/${query}`)
         .then(response => {
             const countries = response.data;
             res.render('home', { countries});
         })
-        .catch(err => console.log(err));
-})
+        .catch(() => next());
+});
+
+app.use((req, res) => {
+    res.status(404).render('notFound');
+});
 
 app.listen(port, () => console.log(`Server listening on http://localhost:${port}`));
