@@ -211,8 +211,27 @@ body {
     border-radius: 5px 5px 0 0;
 }
 
+.card-text {
+    margin: 20px 24px 0 24px;
+}
+
+.card-country {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.card-detail {
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.card-detail-name {
+    font-weight: 600;
+}
+
 @media(min-width: 700px) {
     .cards-container {
+        margin: 48px auto;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
