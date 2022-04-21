@@ -34,4 +34,14 @@ app.get('/region', (req, res) => {
         .catch(err => console.log(err));
 });
 
+app.get('/search', (req, res) => {
+    const { query } = req.query;
+    axios.get(`https://restcountries.com/v3.1/name/${query}`)
+        .then(response => {
+            const countries = response.data;
+            res.render('home', { countries});
+        })
+        .catch(err => console.log(err));
+})
+
 app.listen(port, () => console.log(`Server listening on http://localhost:${port}`));
