@@ -144,7 +144,7 @@ body {
     color: var(--input-placeholder-color);
 }
 
-.region {
+.filter {
     cursor: pointer;
     border: none;
     border-radius: 5px;
@@ -178,7 +178,7 @@ body {
         padding: 20px 30px 20px 74px;
     }
 
-    .region {
+    .filter {
         margin-top: 0;
         font-size: 14px;
         padding: 19px 36px 19px 24px;
