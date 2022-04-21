@@ -28,10 +28,10 @@ app.get('/region', (req, res) => {
     const { filter } = req.query;
     axios.get(`https://restcountries.com/v3.1/region/${filter}`)
         .then(response => {
-            // res.send(response.data)
             const countries = response.data;
             res.render('home', { countries});
-        });;
+        })
+        .catch(err => console.log(err));
 });
 
 app.listen(port, () => console.log(`Server listening on http://localhost:${port}`));
