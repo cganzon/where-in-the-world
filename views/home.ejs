@@ -26,11 +26,11 @@
                   </svg>
                 <input type="text" class="search-input" placeholder="Search for a country...">
             </form>
-            <form action="">
-                <select class="region" name="region" id="region">
+            <form action="/region">
+                <select class="filter" name="filter" id="filter" onchange="this.form.submit()">
                     <option value="" hidden>Filter by Region</option>
                     <option value="africa">Africa</option>
-                    <option value="americas">America</option>
+                    <option value="americas">Americas</option>
                     <option value="asia">Asia</option>
                     <option value="europe">Europe</option>
                     <option value="oceania">Oceania</option>
@@ -40,9 +40,9 @@
         <div class="cards-container">
             <% for(let country of countries) { %>
                 <div class="country-card">
-                    <img class="card-flag" src=<%= country.flag %> alt="The flag of <%= country.name %>">
+                    <img class="card-flag" src=<%= country.flags.png %> alt="The flag of <%= country.name %>">
                     <div class="card-text">
-                        <h2 class="card-country"><%= country.name.length > 40 ? country.nativeName : country.name %></h2>
+                        <h2 class="card-country"><%= country.name.common %></h2>
                         <p class="card-detail"><span class="card-detail-name">Population:</span> <%= country.population.toLocaleString() %></p>
                         <p class="card-detail"><span class="card-detail-name">Region:</span> <%= country.region %></p>
                         <p class="card-detail"><span class="card-detail-name">Capital:</span> <%= country.capital %></p>
