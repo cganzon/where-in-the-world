@@ -49,7 +49,8 @@ app.get('/:countryCode', (req, res, next) => {
     axios.get(`https://restcountries.com/v3.1/alpha/${countryCode}`)
         .then(response => {
             res.send(response.data);
-        });
+        })
+        .catch(() => next());
 });
 
 app.use((req, res) => {
