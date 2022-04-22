@@ -46,7 +46,7 @@ app.get('/search', (req, res, next) => {
 
 app.get('/:countryCode', (req, res, next) => {
     const { countryCode } = req.params;
-    axios.get(`https://restcountries.com/v3.1/alpha/${countryCode}`)
+    axios.get(`https://restcountries.com/v2/alpha/${countryCode}`)
         .then(response => {
             res.send(response.data);
         })

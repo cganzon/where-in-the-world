@@ -39,7 +39,7 @@
         </div>
         <div class="cards-container">
             <% for(let country of countries) { %>
-                <a class="card-link" href="/<%= country.cca3 %>">
+                <a class="card-link" href="/<%= country.alpha3Code %>">
                     <div class="country-card">
                         <img class="card-flag" src=<%= country.flags.png %> alt="The flag of <%= country.name %>">
                         <div class="card-text">
