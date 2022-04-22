@@ -44,6 +44,14 @@ app.get('/search', (req, res, next) => {
         .catch(() => next());
 });
 
+app.get('/:countryCode', (req, res, next) => {
+    const { countryCode } = req.params;
+    axios.get(`https://restcountries.com/v3.1/alpha/${countryCode}`)
+        .then(response => {
+            res.send(response.data);
+        });
+});
+
 app.use((req, res) => {
     res.status(404).render('notFound');
 });
