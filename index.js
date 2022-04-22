@@ -36,7 +36,7 @@ app.get('/region', (req, res, next) => {
 
 app.get('/search', (req, res, next) => {
     const { query } = req.query;
-    axios.get(`https://restcountries.com/v3.1/name/${query}`)
+    axios.get(`https://restcountries.com/v3.1/name/${query.trim()}`)
         .then(response => {
             const countries = response.data;
             res.render('home', { countries});
