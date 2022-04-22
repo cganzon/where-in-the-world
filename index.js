@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res, next) => {
-    axios.get('https://restcountries.com/v3.1/all')
+    axios.get('https://restcountries.com/v2/all')
         .then(response => {
             const countries = response.data;
             res.render('countries', { countries });
@@ -26,7 +26,7 @@ app.get('/', (req, res, next) => {
 
 app.get('/region', (req, res, next) => {
     const { filter } = req.query;
-    axios.get(`https://restcountries.com/v3.1/region/${filter}`)
+    axios.get(`https://restcountries.com/v2/region/${filter}`)
         .then(response => {
             const countries = response.data;
             res.render('countries', { countries});
@@ -36,7 +36,7 @@ app.get('/region', (req, res, next) => {
 
 app.get('/search', (req, res, next) => {
     const { query } = req.query;
-    axios.get(`https://restcountries.com/v3.1/name/${query.trim()}`)
+    axios.get(`https://restcountries.com/v2/name/${query.trim()}`)
         .then(response => {
             const countries = response.data;
             res.render('countries', { countries});
