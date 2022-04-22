@@ -223,6 +223,14 @@ a {
     gap: 40px;
 }
 
+.card-link {
+    transition: transform 0.15s;
+}
+
+.card-link:hover {
+    transform: scale(1.05);
+}
+
 .country-card {
     width: 264px;
     height: 340px;
