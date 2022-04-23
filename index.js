@@ -15,6 +15,7 @@ app.use(express.json());
 // Static assets middleware
 app.use(express.static(path.join(__dirname, 'public')));
 
+// All countries route
 app.get('/', (req, res, next) => {
     axios.get('https://restcountries.com/v2/all')
         .then(response => {
@@ -24,6 +25,7 @@ app.get('/', (req, res, next) => {
         .catch(() => next());
 });
 
+// Filter countries by region route
 app.get('/region', (req, res, next) => {
     const { filter } = req.query;
     axios.get(`https://restcountries.com/v2/region/${filter}`)
@@ -34,6 +36,7 @@ app.get('/region', (req, res, next) => {
         .catch(() => next());
 });
 
+// Search countries route
 app.get('/search', (req, res, next) => {
     const { query } = req.query;
     axios.get(`https://restcountries.com/v2/name/${query.trim()}`)
@@ -59,12 +62,12 @@ const getBorderCountries = async borderCountries => {
     };
 };
 
+// Show country route
 app.get('/:countryCode', (req, res, next) => {
     const { countryCode } = req.params;
     axios.get(`https://restcountries.com/v2/alpha/${countryCode}`)
         .then(async response => {
             const country = response.data;
-            console.log(country);
             let languages;
             let currencies;
             if(country.currencies) {
