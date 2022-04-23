@@ -49,7 +49,7 @@ a {
 }
 
 .btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 @media(min-width: 768px) {
@@ -274,7 +274,35 @@ a {
     }
 }
 
+/* /////////////////////////// */
+/* Country details page styles */
+/* /////////////////////////// */
+.back-btn {
+    width: max-content;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 23px;
+    margin-bottom: 64px;
+}
+
+.details-flag {
+    width: 100%;
+}
+
+@media(min-width: 768px) {
+    .back-btn {
+        font-size: 16px;
+        padding: 10px 32px;
+        border-radius: 6px;
+        margin-bottom: 80px;
+    }
+}
+
+/* ///////////////////// */
 /* Not found page styles */
+/* ///////////////////// */
 .not-found-header {
     font-size: 20px;
 }
