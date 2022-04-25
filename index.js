@@ -1,7 +1,7 @@
 const { default: axios } = require('axios');
 const express = require('express');
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 const path = require('path');
 
 // EJS Setup
