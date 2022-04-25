@@ -20,41 +20,43 @@
         </div>
     </header>
     <main class="main-content">
-        <div class="country-details-top">
-            <a href="/" class="back-btn btn">
-                <svg class="left-arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
-                </svg>Back
-            </a>
-            <img class="details-flag" src="<%= country.flag %>" alt="The flag of <%= country.name %>">
-        </div>
-        <div class="country-details-bottom">
-            <h2 class="details-country"><%= country.name %></h2>
-            <div class="details">
-                <div class="details-top">
-                    <p class="detail"><span class="detail-name">Native Name:</span> <%= country.nativeName %></p>
-                    <p class="detail"><span class="detail-name">Population:</span> <%= country.population.toLocaleString() %></p>
-                    <p class="detail"><span class="detail-name">Region:</span> <%= country.region %></p>
-                    <p class="detail"><span class="detail-name">Sub Region:</span> <%= country.subregion %></p>
-                    <p class="detail"><span class="detail-name">Capital:</span> <%= country.capital %></p>
-                </div>
-                <div class="details-bottom">
-                    <p class="detail"><span class="detail-name">Top Level Domain:</span> <%= country.topLevelDomain[0] %></p>
-                    <p class="detail"><span class="detail-name">Currencies:</span> <%= currencies %></p>
-                    <p class="detail"><span class="detail-name">Languages:</span> <%= languages %></p>
-                </div>
+        <a href="/" class="back-btn btn">
+            <svg class="left-arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+            </svg>Back
+        </a>
+        <div class="country-details">
+            <div class="country-details-top">
+                <img class="details-flag" src="<%= country.flag %>" alt="The flag of <%= country.name %>">
             </div>
-            <div class="border-countries-container">
-                <h3 class="border-countries">Border Countries:</h3>
-                <div class="border-countries-links">
-                    <!-- Only rendering the border coutries if the borderCountries array exists -->
-                    <% if(borderCountries) { %>
-                        <% for(let borderCountry of borderCountries) { %>
-                            <a class="btn border-country-link" href="/<%= borderCountry.alpha3Code %>"><%= borderCountry.name %></a>
+            <div class="country-details-bottom">
+                <h2 class="details-country"><%= country.name %></h2>
+                <div class="details">
+                    <div class="details-top">
+                        <p class="detail"><span class="detail-name">Native Name:</span> <%= country.nativeName %></p>
+                        <p class="detail"><span class="detail-name">Population:</span> <%= country.population.toLocaleString() %></p>
+                        <p class="detail"><span class="detail-name">Region:</span> <%= country.region %></p>
+                        <p class="detail"><span class="detail-name">Sub Region:</span> <%= country.subregion %></p>
+                        <p class="detail"><span class="detail-name">Capital:</span> <%= country.capital %></p>
+                    </div>
+                    <div class="details-bottom">
+                        <p class="detail"><span class="detail-name">Top Level Domain:</span> <%= country.topLevelDomain[0] %></p>
+                        <p class="detail"><span class="detail-name">Currencies:</span> <%= currencies %></p>
+                        <p class="detail"><span class="detail-name">Languages:</span> <%= languages %></p>
+                    </div>
+                </div>
+                <div class="border-countries-container">
+                    <h3 class="border-countries">Border Countries:</h3>
+                    <div class="border-countries-links">
+                        <!-- Only rendering the border coutries if the borderCountries array exists -->
+                        <% if(borderCountries) { %>
+                            <% for(let borderCountry of borderCountries) { %>
+                                <a class="btn border-country-link" href="/<%= borderCountry.alpha3Code %>"><%= borderCountry.name %></a>
+                            <% } %>
+                        <% } else { %>
+                            <p>This country has no border countries</p>
                         <% } %>
-                    <% } else { %>
-                        <p>This country has no border countries</p>
-                    <% } %>
+                    </div>
                 </div>
             </div>
         </div>

@@ -340,6 +340,7 @@ a {
 
     .details-flag {
         border-radius: 10px;
+        
     }
 
     .details-country {
@@ -347,8 +348,45 @@ a {
         margin-bottom: 23px;
     }
 
+    .details {
+        display: flex;
+        gap: 70px;
+    }
+
+    .details-top {
+        margin-bottom: 0;
+    }
+
     .detail {
         font-size: 16px;
+    }
+}
+
+@media(min-width: 1025px) {
+    .country-details {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .details-flag {
+        margin-bottom: 0;
+    }
+
+    .details {
+        display: flex;
+        gap: 100px;
+        flex-grow: 1;
+    }
+
+    .details-bottom {
+        width: 50%;
+    }
+}
+
+@media(min-width: 1201px) {
+    .country-details {
+        gap: 100px;
     }
 }
 
