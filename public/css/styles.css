@@ -381,10 +381,12 @@ a {
         gap: 100px;
         flex-grow: 1;
     }
+}
 
-    /* .details-bottom {
-        width: 50%;
-    } */
+@media(min-width: 1201px) {
+    .country-details {
+        gap: 100px;
+    }
 }
 
 /* ///////////////////// */
