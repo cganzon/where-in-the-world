@@ -33,7 +33,7 @@ app.get('/region', (req, res, next) => {
     axios.get(`https://restcountries.com/v2/region/${filter}`)
         .then(response => {
             const countries = response.data;
-            res.render('countries', { countries});
+            res.render('countries', { countries });
         })
         .catch(() => next());
 });
@@ -44,7 +44,7 @@ app.get('/search', (req, res, next) => {
     axios.get(`https://restcountries.com/v2/name/${query.trim()}`)
         .then(response => {
             const countries = response.data;
-            res.render('countries', { countries});
+            res.render('countries', { countries });
         })
         .catch(() => next());
 });
