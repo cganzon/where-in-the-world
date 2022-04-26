@@ -58,6 +58,10 @@ a {
     }
 }
 
+.sr-only {
+    display: none;
+}
+
 /* Table of Contents */
 /* 1. Header Styles */
 /* 2. Main content styles */
